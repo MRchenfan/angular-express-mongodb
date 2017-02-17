@@ -1,0 +1,18 @@
+nav.navbar.navbar-default
+	div.container-fluid
+		div.navbar-header
+			button.navbar-toggle.collapsed(
+				data-toggle='collapse',
+				data-target='#header-navbar-collapse',
+				aria-expanded='false'
+			)
+				a.navbar-brand(href='#') DA书城
+		
+		div.collapse.navbar-collapse#header-navbar-collapse
+			ul.nav.navbar-nav
+				li.active
+					a(href='/bookList') 
+						| bookList
+			ul.nav.navbar-nav.navbar-right
+				li
+					a(href='/users') 用户中心
