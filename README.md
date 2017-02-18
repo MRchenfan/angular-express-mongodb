@@ -1,8 +1,7 @@
-这是一个网页项目，不是单页应用
+
 
 ## 网页本地开发
- 使用browser-sync来代理express启动服务和自动刷新
- nodemon 代理express，可以自动重启服务器
+
 
 ### dev
 ```
