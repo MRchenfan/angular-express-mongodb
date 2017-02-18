@@ -20,14 +20,14 @@ const PORT = config.port
 
 
 let srcdir = {
-	html: 'src',
-	css: 'src/css',
-	js: 'src/js',
-	img: 'src/img',
-	lib: 'src/lib',
-	views: 'src/views',
-	scss: 'src/scss',
-	data: 'src/data'
+	html: 'web',
+	css: 'web/css',
+	js: 'web/js',
+	img: 'web/img',
+	lib: 'web/lib',
+	views: 'web/views',
+	scss: 'web/scss',
+	data: 'web/data'
 }
 let distdir = {
 	css: 'public/css',
@@ -80,7 +80,7 @@ gulp.task('server:dev', () => {
 
 	bs.init({
 		server: {
-			baseDir: 'src',
+			baseDir: 'web',
 			port: PORT
 		}
 	})
@@ -92,9 +92,9 @@ gulp.task('watch', () => {
 	// gulp.watch(srcdir.views + '/**/*.jade', ['jade'])
 	gulp.watch(srcdir.scss + '/**/*.scss', ['sass'])
 
-	gulp.watch('src/**/*.html', bs.reload);
-  gulp.watch('src/**/*.css', bs.reload);
-  gulp.watch('src/**/*.js', bs.reload);
+	gulp.watch('web/**/*.html', bs.reload);
+  gulp.watch('web/**/*.css', bs.reload);
+  gulp.watch('web/**/*.js', bs.reload);
 })
 
 gulp.task('default', () => {
