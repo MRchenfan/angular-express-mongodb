@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "browser-sync": "^2.18.8",
+    "colors": "^1.1.2",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-ejs": "^3.0.0",
@@ -25,6 +26,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.4.1",
-    "run-sequence": "^1.2.2"
+    "run-sequence": "^1.2.2",
+    "yargs": "^6.6.0"
   }
 }
