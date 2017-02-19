@@ -24,6 +24,8 @@ todo： 额外扩展，比如使用es6, typescript, coffeescript...
 
 
 ## webapp 开发
+注意需要将webapp文件夹整个放到public目录下才能保证脚本和样式文件的路径正确
+
 
 
 
