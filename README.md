@@ -29,7 +29,14 @@ todo： 额外扩展，比如使用es6, typescript, coffeescript...
 
 ## 开发日志
 
+### 2017/2/21
+web:
+1. 页面划分，路由规划
+2. header, footer, sidebar
+3. header部分需要给一个状态，传递一个参数，确定当前页面位置 => include时可以传递一个locals，所以可以穿入一个state
+
 ### 2017/2/20
+webapp:
 1. 登录注册界面,开发成一个组件
 2. 如何在controller中实现页面跳转
 $state.go(stateName)

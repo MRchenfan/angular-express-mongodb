@@ -57,8 +57,12 @@ gulp.task('ejs', () => {
 	return gulp.src(srcdir.views + '/*.ejs')
 		.pipe(data((file) => {
 
-			let dataPath = srcdir.data + '/' + path.basename(file.path, '.ejs') + '.json';
-			return JSON.parse(fs.readFileSync(dataPath, 'utf-8'))
+			try {
+				let dataPath = srcdir.data + '/' + path.basename(file.path, '.ejs') + '.json';
+				return JSON.parse(fs.readFileSync(dataPath, 'utf-8'))
+			} catch(err) {
+				return {}
+			}
 		}))
 		.pipe(ejs())
 		.pipe(rename((filePath) => {

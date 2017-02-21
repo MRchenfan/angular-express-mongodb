@@ -1,5 +1,16 @@
-body {
-	background: #C08541;
-	color: #FFF;
-	font-size: 20px;
+
+// @import "components/reset";
+@import "components/colors";
+// @import "components/print";
+
+html,body {
+	background: $bg-content;
+}
+
+.footer {
+	text-align: center;
+}
+
+.sidebar {
+	display: none;
 }
