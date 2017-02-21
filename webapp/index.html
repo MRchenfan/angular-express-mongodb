@@ -4,22 +4,35 @@
 	<title>angular-express-mongodb</title>
 
 	<!-- lib stylesheet -->	
-	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
 
 	<!-- your stylesheet -->
 	<link rel='stylesheet' href='css/style.css' />
 </head>
 <body>
 	<!-- lib javaScript -->
-	<script src="lib/jquery/dist/jquery.min.js"></script>
-	<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="lib/angular/angular.min.js"></script>
+	<script src="lib/jquery/dist/jquery.js"></script>
+	<script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="lib/angular/angular.js"></script>
+	<script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
 
 	<!-- angular app.module -->
 	<script src="app.js"></script>
 	<script src="config/router.js"></script>
 	<script src="config/constant.js"></script>
 
-	<div ng-view></div>
+	<!-- angular app.controllers -->
+	<script src="js/controllers/app.controller.js"></script>
+
+	<!-- angular components -->
+	<script src="components/user-center/user-center.module.js"></script>
+	<script src="components/user-center/user-center.directive.js"></script>
+	<script src="components/user-center/user-center.service.js"></script>
+
+	<div class="container">
+
+		<div class="main" ui-view></div>
+		
+	</div>
 </body>
 </html>
