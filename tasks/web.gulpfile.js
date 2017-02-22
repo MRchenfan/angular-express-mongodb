@@ -13,6 +13,9 @@ let rename = require('gulp-rename')
 let del = require('del')
 let runSequence = require('run-sequence')
 let data = require('gulp-data')
+let cleanCss = require('gulp-clean-css')
+let uglifyJs = require('gulp-uglify')
+let replace = require('gulp-replace')
 
 let config = require('../config/config')
 const HOST = config.host
@@ -34,10 +37,11 @@ let srcdir = {
 	data: 'src/data'
 }
 let distdir = {
-	css: 'public/css',
-	js: 'public/js',
-	img: 'public/img',
-	lib: 'public/lib',
+	dist: 'public',
+	css: 'public',
+	js: 'public',
+	img: 'public',
+	lib: 'public',
 	views: 'views'
 }
 
@@ -60,7 +64,7 @@ gulp.task('ejs', () => {
 			try {
 				let dataPath = srcdir.data + '/' + path.basename(file.path, '.ejs') + '.json';
 				return JSON.parse(fs.readFileSync(dataPath, 'utf-8'))
-			} catch(err) {
+			} catch (err) {
 				return {}
 			}
 		}))
@@ -97,12 +101,12 @@ gulp.task('server:dev', () => {
 gulp.task('watch', () => {
 
 	gulp.watch(srcdir.views + '/**/*.ejs', ['ejs'])
-	// gulp.watch(srcdir.views + '/**/*.jade', ['jade'])
+		// gulp.watch(srcdir.views + '/**/*.jade', ['jade'])
 	gulp.watch(srcdir.scss + '/**/*.scss', ['sass'])
 
 	gulp.watch('src/**/*.html', bs.reload);
-  gulp.watch('src/**/*.css', bs.reload);
-  gulp.watch('src/**/*.js', bs.reload);
+	gulp.watch('src/**/*.css', bs.reload);
+	gulp.watch('src/**/*.js', bs.reload);
 })
 
 gulp.task('default', () => {
@@ -113,3 +117,56 @@ gulp.task('default', () => {
 // dev tasks end fuck
 
 // build tasks start
+
+gulp.task('css', () => {
+
+	return gulp.src(srcdir.css + '**/*.css')
+		.pipe(cleanCss())
+		.pipe(rename((filePath) => {
+
+			filePath.extname = '.min.css'
+		}))
+		.pipe(gulp.dest(distdir.dist))
+})
+
+gulp.task('js', () => {
+
+	return gulp.src(srcdir.js + '**/*.js')
+		.pipe(uglifyJs())
+		.pipe(rename((filePath) => {
+
+			filePath.extname = '.min.js'
+		}))
+		.pipe(gulp.dest(distdir.dist))
+})
+
+gulp.task('lib', () => {
+
+	return gulp.src(srcdir.lib + '/**/*.*')
+		.pipe(gulp.dest(distdir.dist + '/lib'))
+})
+
+gulp.task('img', () => {
+
+	return gulp.src(srcdir.img + '/**/*.*')
+		.pipe(gulp.dest(distdir.dist + '/img'))
+})
+
+gulp.task('views', () => {
+
+	return gulp.src(srcdir.views + '/**/*.*')
+		.pipe(replace('.html', ''))
+		.pipe(replace('.css', '.min.css'))
+		.pipe(replace('.js', '.min.js'))
+		.pipe(gulp.dest(distdir.views))
+})
+
+gulp.task('build', () => {
+
+	runSequence('css', 'js', 'lib', 'img', 'views', () => {
+
+		console.log('your web project is built, check it ')
+	})
+})
+
+// build tasks end

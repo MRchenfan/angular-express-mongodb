@@ -32,6 +32,10 @@ todo： 额外扩展，比如使用es6, typescript, coffeescript...
 ### 2017/2/22
 web: 
 1. sidebar
+2. 部署到后端
+
+bug：
+1. 页面header部分抖动
 
 ### 2017/2/21
 web:

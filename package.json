@@ -21,12 +21,15 @@
     "colors": "^1.1.2",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.0.3",
     "gulp-ejs": "^3.0.0",
     "gulp-jade": "^1.1.0",
     "gulp-nodemon": "^2.2.1",
     "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.4.1",
+    "gulp-uglify": "^2.0.1",
     "run-sequence": "^1.2.2",
     "yargs": "^6.6.0"
   }

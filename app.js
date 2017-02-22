@@ -6,9 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
-
 var app = express();
 var sessionOptions = {
   resave:true,
@@ -34,8 +31,20 @@ app.use(session(sessionOptions));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+// routers 
+var index = require('./routes/index');
+var users = require('./routes/users');
+let articles = require('./routes/articles')
+let message = require('./routes/message')
+let works = require('./routes/works')
+let login = require('./routes/login')
+
 app.use('/', index);
 app.use('/users', users);
+app.use('/articles', articles)
+app.use('/message', message)
+app.use('/works', works)
+app.use('/login', login)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

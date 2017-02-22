@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>松松.留言板</title>
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel='stylesheet' href='css/style.min.css' />
+</head>
+<body>
+
+	<div class="main">
+		<!-- header begin -->
+		<%- include('common/header', { user: user, state: 'message' }) %>
+
+		<!-- content begin -->
+		<div class="content">
+			<br>
+			<br>
+			<hr>
+			<h3>this is message page</h3>
+			<hr>
+			<br>
+			<br>
+		</div>
+
+		<!-- footer begin -->
+		<%- include('common/footer') %>
+	</div>
+
+	<!-- sidebar begin -->
+	<%- include('common/sidebar') %>
+
+	<script src="lib/jquery/dist/jquery.min.js"></script>
+	<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
