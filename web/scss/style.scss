@@ -1,5 +1,35 @@
-body {
-	background: #C08541;
-	color: #FFF;
-	font-size: 20px;
+
+// @import "components/reset";
+@import "components/colors";
+// @import "components/print";
+
+html,body {
+	background: $bg-content;
+}
+
+.main {
+
+	.header {
+
+	}
+
+	.footer {
+		height: 100px;
+		background: $color-black + #333;
+		text-align: center;
+	}
+
+	.content {
+		
+	}
+}
+
+.sidebar {
+	position: fixed;
+	top: 0;
+	left: -300px;
+	bottom: 0;
+	width: 300px;
+	background: $color-black;
+	transition: left 0.5s;
 }

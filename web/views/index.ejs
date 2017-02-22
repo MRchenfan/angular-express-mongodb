@@ -1,11 +1,62 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<head>
+	<title><%= title %></title>
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="lib/swiper/dist/css/swiper.css">
+
+	<link rel='stylesheet' href='css/style.css' />
+	<link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+	<div class="main">
+		<!-- header begin -->
+		<%- include('common/header', { user: user, state: 'home' }) %>
+
+		<!-- content begin -->
+		<div class="content">
+			<div class="content-section content-banner">
+				<!-- swiper start -->
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">slide-1</div>
+						<div class="swiper-slide">slide-2</div>
+						<div class="swiper-slide">slide-3</div>
+					</div>
+
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+
+					<div class="swiper-scrollbar"></div>
+				</div>
+				<!-- swiper end -->
+			</div>
+
+			<div class="content-section content-introduce" style="background-image: url('img/imsongsong.png');">
+				<h3 class="title">introduce here</h3>
+			</div>
+
+			<div class="content-section content-works">
+				<h3 class="title">works here</h3>
+			</div>
+
+			<div class="content-section content-articles">
+				<h3 class="title">articles here</h3>
+			</div>
+		</div>
+
+		<!-- footer begin -->
+		<%- include('common/footer') %>
+	</div>
+
+	<!-- sidebar begin -->
+	<%- include('common/sidebar') %>
+
+	<script src="lib/jquery/dist/jquery.js"></script>
+	<script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="lib/swiper/dist/js/swiper.jquery.js"></script>
+	<script src="js/main.js"></script>
+</body>
 </html>

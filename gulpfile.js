@@ -1,5 +1,6 @@
 'use strict';
 
+<<<<<<< HEAD
 let fs = require('fs')
 let path = require('path')
 let gulp = require('gulp')
@@ -96,12 +97,33 @@ gulp.task('watch', () => {
   gulp.watch('web/**/*.css', bs.reload);
   gulp.watch('web/**/*.js', bs.reload);
 })
+=======
+/**
+ * @ignore  =====================================================================================
+ * @file gulpfile.js
+ * @author  damon
+ * @version 0.1.0
+ * @ignore  created in 2017/2/18
+ * @ignore  depend gulp colors argv
+ * @ignore  =====================================================================================
+ */
 
-gulp.task('default', () => {
+let gulp = require('gulp')
+let colors = require('colors')
+let argv = require('yargs').argv
 
-	return runSequence('sass', 'ejs', 'server:dev', 'watch')
-})
+switch (argv.env) {
+>>>>>>> webapp
 
-// dev tasks end fuck
+	case 'webapp': {
 
-// build tasks start
+		require('./tasks/webapp.gulpfile')
+		break
+	}
+	default: {
+
+		require('./tasks/web.gulpfile')
+	}
+}
+
+console.log(('\n\n=> development enviroment: ' + argv.env + ' <=\n\n').red)

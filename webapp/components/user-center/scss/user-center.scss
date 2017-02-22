@@ -1,0 +1,8 @@
+.user-center {
+	input.ng-valid {
+		border: 1px solid green;
+	}
+	input.ng-invalid {
+		border: 1px solid red;
+	}
+}

@@ -1,11 +1,124 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Hello ejs !</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1>Hello ejs !</h1>
-    <p>Welcome to Hello ejs !</p>
-  </body>
+<head>
+	<title>松松</title>
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="lib/swiper/dist/css/swiper.css">
+
+	<link rel='stylesheet' href='css/style.css' />
+	<link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+	<div class="main">
+		<!-- header begin -->
+		<div class="header">
+	<nav class="container-fluid navbar-inverse">
+		<div class="navbar-header">
+			<button class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon-bar"></span>		
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a href="#" class="navbar-brand">
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+		</div>
+
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-left">
+
+			
+				<li class="active">
+			
+
+					<a href="index.html">个人主页</a>
+				</li>
+
+			
+				<li>
+			
+
+					<a href="works.html">作品展示</a>
+				</li>
+			
+			
+				<li>
+			
+
+					<a href="articles.html">文章心情</a>
+				</li>
+			
+			
+				<li>
+			
+
+					<a href="message.html">留言板</a>
+				</li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+					
+						<li>
+					
+				
+						<a href="login.html">登录</a>
+				
+					</li>
+
+			</ul>
+		</div>
+	</nav>
+</div>
+
+		<!-- content begin -->
+		<div class="content">
+			<div class="content-section content-banner">
+				<!-- swiper start -->
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">slide-1</div>
+						<div class="swiper-slide">slide-2</div>
+						<div class="swiper-slide">slide-3</div>
+					</div>
+
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+
+					<div class="swiper-scrollbar"></div>
+				</div>
+				<!-- swiper end -->
+			</div>
+
+			<div class="content-section content-introduce" style="background-image: url('img/imsongsong.png');">
+				<h3 class="title">introduce here</h3>
+			</div>
+
+			<div class="content-section content-works">
+				<h3 class="title">works here</h3>
+			</div>
+
+			<div class="content-section content-articles">
+				<h3 class="title">articles here</h3>
+			</div>
+		</div>
+
+		<!-- footer begin -->
+		<div class="footer">
+	<a href="#">copyright damon</a>
+	<p class="text-info">2017.2.21</p>
+</div>
+	</div>
+
+	<!-- sidebar begin -->
+	<div class="sidebar">
+	sidebar
+</div>
+
+	<script src="lib/jquery/dist/jquery.js"></script>
+	<script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="lib/swiper/dist/js/swiper.jquery.js"></script>
+	<script src="js/main.js"></script>
+</body>
 </html>

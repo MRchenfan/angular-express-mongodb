@@ -1,0 +1,91 @@
+<div class="user-center">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				user-center
+			</h3>
+		</div>
+		<div class="panel-body clearfix">
+			<form class="form-horizontal" name="userForm" novalidate >
+				<div class="form-group">
+					<label class="col-sm-2">name</label>
+					<div class="col-sm-10">
+						<input 
+							class="form-control" 
+							type="text" 
+							name="name" 
+							placeholder="your name" 
+							ng-focus
+							required
+							ng-minlength="4" 
+							ng-maxlength="10" 
+							user-name-unique="name"
+							ng-class="{error: userForm.name.$dirty && userForm.name.$invalid}"
+							ng-model="user.name">
+						<p class="help-block small" ng-show="userForm.name.$error.unique">
+							name repeat 
+						</p>
+						<p class="help-block small" ng-show="userForm.name.$error.required">
+							name required
+						</p>
+						<p class="help-block small" ng-show="userForm.name.$error.minlength">
+							name length should be longer then 4
+						</p>
+						<p class="help-block small" ng-show="userForm.name.$error.maxlength">
+							name length should be shorter then 10
+						</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2">email</label>
+					<div class="col-sm-10">
+						<input 
+							class="form-control" 
+							type="email" 
+							name="email" 
+							placeholder="your email@exapmle.com" 
+							required
+							ng-model="user.email">
+						<p class="help-block small" ng-show="userForm.email.$error.required">
+							email required
+						</p>
+						<p class="help-block small" ng-show="userForm.email.$error.email">
+							email is illegal
+						</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2">password</label>
+					<div class="col-sm-10">
+						<input 
+							class="form-control" 
+							type="password" 
+							name="password" 
+							placeholder="******" 
+							required 
+							ng-model="user.passwd">
+						<p class="help-block small" ng-show="userForm.password.$error.required">
+							password is required
+						</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-10 col-sm-offset-2">
+						<button 
+							class="btn btn-primary" 
+							ng-disabled="userForm.$invalid"
+							ng-click="login()">
+							Sign in
+						</button>
+						<button 
+							class="btn btn-default" 
+							ng-disabled="userForm.$invalid"
+							ng-click="register()">
+							Register
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

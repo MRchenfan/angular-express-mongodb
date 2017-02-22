@@ -1,0 +1,21 @@
+/* colors */
+
+$color-pink: #FAADB6;
+$color-black: #222;
+$color-white: #FFF;
+$color-blue: #79C8EF;
+$color-grey: #F6F6F6;
+$color-red: #B1434E;
+$color-green: #3DC725;
+
+$color-muted: $color-grey - #333;
+$color-primary: $color-blue;
+$color-success: $color-green;
+$color-info: $color-blue - #333;
+$color-warning: $color-red + #333;
+$color-danger: $color-red;
+
+$bg-header: $color-black;
+$bg-content: $color-grey;
+$bg-footer: $color-black;
+
