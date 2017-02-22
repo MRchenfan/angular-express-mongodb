@@ -1,0 +1,31 @@
+
+@import "components/colors";
+
+.content {
+
+	.content-section {
+		width: 100%;
+		height: 500px;
+		padding: 10px;
+	}
+	
+	.content-banner {
+		background: $color-blue;
+		.swiper-container {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.content-introduce {
+		background: $color-black;
+	}
+
+	.content-works {
+		background: $color-white;
+	}
+
+	.content-articles {
+		background: $color-black;
+	}
+}
