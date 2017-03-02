@@ -44,7 +44,6 @@ router.post('/register', (req, res, next) => {
 		}
 
 		// create success
-		req.session.user = _res;
 		return res.json({
 			success: true,
 			result: _res
