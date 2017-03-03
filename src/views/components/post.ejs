@@ -1,0 +1,29 @@
+<div class="post">
+	<div class="post-img" style="background-image: url(<%= post.img %>)">
+	</div>
+	<div class="post-header">
+		<h3 class="post-title">
+			<%= post.title %>
+		</h3>
+		<p class="post-meta">
+			<span class="post-author">
+				<%= post.author %>
+			</span>
+			<span class="post-time">
+				<%= post.time %>
+			</span>
+			<span class="post-praise">
+				<span class="post-praise-icon icon-praise"></span>
+				<%= post.praise %>
+			</span>
+		</p>
+	</div>
+	<div class="post-body">
+		<div class="post-description">
+			<p><%= post.description %></p>
+		</div>
+		<div class="post-content">
+			<%= post.content %>
+		</div>
+	</div>
+</div>

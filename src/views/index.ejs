@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= title %></title>
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="lib/swiper/dist/css/swiper.css">
+
+	<link rel='stylesheet' href='css/style.css' />
+	<link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+	<div class="main">
+		<!-- header begin -->
+		<%- include('common/header', { user: user, state: 'home' }) %>
+
+		<!-- content begin -->
+		<div class="content">
+			<div class="content-section content-banner">
+				<!-- swiper start -->
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<%- include('components/swiper', { imgs: banner }) %>
+					</div>
+
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+
+					<div class="swiper-scrollbar"></div>
+				</div>
+				<!-- swiper end -->
+			</div>
+
+			<div class="content-section content-introduce" style="background-image: url('<%= introduce.background %>');">
+				<div class="introduce-wrapper">
+					<%- include('components/introduce', { introduce: introduce }) %>
+				</div>
+			</div>
+
+			<div class="content-section content-works">
+				<div class="section-heading">
+					<h3 class="section-title text-info">
+						精选作品
+					</h3>
+				</div>
+				<div class="row">
+					<%- include('components/media', { medias: works }) %>
+				</div>
+			</div>
+
+			<div class="content-section content-hobby">
+				<div class="section-heading">
+					<h3 class="section-title text-warning">
+						个人爱好
+					</h3>
+				</div>
+				<div class="section-body">
+					<div class="hobby-wrapper">
+						<% for (var i = 0; i < hobby.length; i++) { %>
+						<div class="hobby-img-wrapper">
+							<img src="<%= hobby[i].url %>" class="hobby-img">
+						</div>
+						<% } %>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- footer begin -->
+		<%- include('common/footer') %>
+	</div>
+
+	<!-- sidebar begin -->
+	<%- include('common/sidebar') %>
+
+	<script src="lib/jquery/dist/jquery.js"></script>
+	<script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="lib/swiper/dist/js/swiper.jquery.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

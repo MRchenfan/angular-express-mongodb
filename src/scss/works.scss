@@ -1,0 +1,32 @@
+@import "components/colors";
+.content {
+	background: $bg-content;
+
+	.section {
+		padding: 10px;
+		background: $color-white;
+
+		.section-heading {
+			
+			border-bottom: 1px solid $color-pink;
+			.section-title {
+				font-size: 18px;
+				color: $color-pink;
+			}
+		}
+
+		.section-body {
+			min-height: 200px;
+			padding-top: 10px;
+		}
+	}
+	.section-background {
+		.section-heading {
+			
+			border-color: $color-green;
+			.section-title {
+				color: $color-green;
+			}
+		}
+	}
+}

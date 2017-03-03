@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= title %></title>
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="lib/swiper/dist/css/swiper.css">
+
+	<link rel='stylesheet' href='css/style.css' />
+	<link rel="stylesheet" href="css/post.css">
+</head>
+<body>
+
+	<div class="main">
+		<!-- header begin -->
+		<%- include('common/header', { user: user, state: 'articles' }) %>
+
+		<!-- content begin -->
+		<div class="content">
+			<div class="post-wrapper">
+				<%- include('components/post', { post: post }) %>
+			</div>
+		</div>
+
+		<!-- footer begin -->
+		<%- include('common/footer') %>
+	</div>
+
+	<!-- sidebar begin -->
+	<%- include('common/sidebar') %>
+
+	<script src="lib/jquery/dist/jquery.js"></script>
+	<script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="lib/swiper/dist/js/swiper.jquery.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

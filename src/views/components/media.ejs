@@ -1,0 +1,26 @@
+<% for (var i = 0; i < medias.length; i++) { %>
+<div class="col-sm-3 col-xs-6">
+<a href="<%= medias[i].url %>" class="media">
+<div class="media-img" style="background-image:url('<%= medias[i].url %>')"></div>
+		<div class="media-text">
+			<h4 class="media-title">
+			<%= medias[i].title %>
+			</h4>
+			<p class="media-meta">
+				<span class="media-author">
+				<%= medias[i].author %>
+				</span>
+				<span class="media-time">
+				<%= medias[i].time %>
+				</span>
+				<span class="media-praise">
+				<%= medias[i].praise %>
+				</span>
+			</p>
+			<p class="media-description">
+			<%= medias[i].description %>
+			</p>
+		</div>
+	</a>
+</div>
+<% } %>

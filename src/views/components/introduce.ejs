@@ -1,0 +1,26 @@
+<img src="<%= introduce.img %>" alt="img" class="introduce-img">
+<h4 class="introduce-name">
+	<%= introduce.name %>
+</h4>
+<p class="introduce-meta">
+	<% if (introduce.gender) { %> 
+	<span class="introduce-gender icon-man"></span>
+	<% } else { %>
+	<span class="introduce-gender icon-woman"></span>
+	<% } %>
+	<span class="introduce-age">
+		<%= introduce.age %>
+	</span>
+</p>
+<p class="introduce-education">
+	<%= introduce.education  %>
+</p>
+<p class="introduce-job">
+	<%= introduce.job %>
+</p>
+<p class="introduce-city">
+	<%= introduce.city %>
+</p>
+<p class="introduce-hobby">
+	<%= introduce.hobby.toString() %>
+</p>

@@ -1,0 +1,19 @@
+@import "components/colors";
+
+@import "components/media";
+
+.header {
+
+}
+
+.footer {
+	font-size: 14px;
+	line-height: 2;
+	text-align: center;
+	background: $bg-footer;
+	padding: 10px 0;
+}
+
+.sidebar {
+	display: none;
+}

@@ -1,0 +1,93 @@
+@import "components/colors";
+.content {
+	background: $color-grey;
+	overflow: auto;
+	padding-top: 10px;
+	.section {
+		margin-bottom: 20px;
+
+		.post-wrapper {
+			
+			display: block;
+			text-decoration: none;
+			color: $color-black;
+			.post {
+				border: 1px solid #333;
+				border-radius: 6px;
+				background: $color-white;
+				height: 200px;
+				padding: 5px 15px;
+				overflow: hidden;
+				.post-img {
+					float: right;
+					width: 200px;
+					height: 100%;
+					background-repeat: no-repeat;
+					background-size: cover;
+					background-position: center center;
+				}
+				.post-header {
+					
+					.post-title {
+						text-decoration: underline;
+						color: $color-red;
+					}
+					.post-praise {
+						float: right;
+						color: $color-red;
+						margin-right: 20px;
+					}
+					.post-author,
+					.post-time {
+						color: $color-green;
+					}
+				}
+				.post-content {
+					white-space: normal;
+					overflow: hidden;
+					height: 100px;
+					text-overflow: ellipsis;
+					color: $color-black + #333;
+				}
+
+				&:hover {
+					box-shadow: 2px 2px 2px 2px $color-black + #666;
+				}
+				@media screen and(max-width: 750px) {
+						& {
+							height: 100px;
+							.post-img {
+								width: 125px;
+							}
+							.post-content {
+								display: none;
+							}
+						}
+					}
+			}
+		}
+	}
+
+	.paging-container {
+
+		.paging {
+			text-align: center;
+			margin: 20px;
+
+			.paging-item {
+				display: inline-block;
+				font-size: 14px;
+				border: 1px solid $color-blue;
+				border-radius: 3px;
+				padding: 5px 10px;
+				cursor: pointer;
+				color: $color-blue;
+			}
+			.paging-item:hover,
+			.paging-item-current {
+				background: $color-blue;
+				color: $color-white;
+			}
+		}
+	}
+}
