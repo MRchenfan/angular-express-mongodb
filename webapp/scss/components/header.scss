@@ -1,0 +1,19 @@
+.header {
+	background: #FFF;
+	padding: 0 15px;
+	height: 60px;
+	
+	.header-title {
+		font-size: 20px;
+	}
+	.header-breadcrumb {
+		font-size: 14px;
+		color: #333;
+	}
+
+	.user {
+		.user-name {
+			text-align: center;
+		}
+	}
+}

@@ -1,4 +1,11 @@
-<h2>Home page</h2>
-<p>Welcome {{ user.name }}</p>
-<p>your email is {{ user.email }}</p>
-<p>your password is {{ user.passwd }}</p>
+<div class="content-wrapper" ng-class="{ 'open': sidebarToggle }">
+	<db-header></db-header>
+	<div class="content">
+		<div class="col-xs-12">
+			<div ui-view></div>
+		</div>
+	</div>
+</div>
+<div class="sidebar-wrapper" ng-class="{ 'open': sidebarToggle }">
+	<db-sidebar></db-sidebar>
+</div>

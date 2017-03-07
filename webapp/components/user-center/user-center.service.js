@@ -4,7 +4,7 @@ angular.module('userCenter')
 		'$state',
 		function($http, $state) {
 
-			var currentUser;
+			var currentUser = null;
 			this.login = function(user, cb) {
 
 				console.log('login => ' + user.name)
@@ -37,7 +37,7 @@ angular.module('userCenter')
 
 					if (confirm('you should login first')) {
 
-						$state.go('users')
+						$state.go('users.login')
 					}
 				}
 				return currentUser;

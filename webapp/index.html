@@ -2,6 +2,8 @@
 <html ng-app="app">
 <head>
 	<title>angular-express-mongodb</title>
+	
+	<meta name="viewport" content="width=device-width">
 
 	<!-- lib stylesheet -->	
 	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
@@ -24,15 +26,18 @@
 	<!-- angular app.controllers -->
 	<script src="js/controllers/app.controller.js"></script>
 
+	<!-- angular app.directives -->
+	<script src="js/directives/db-sidebar.directive.js"></script>
+	<script src="js/directives/db-header.directive.js"></script>
+
+	<!-- angular app.filters -->
+	<script src="js/filters/bread-crumb.filter.js"></script>
+
 	<!-- angular components -->
 	<script src="components/user-center/user-center.module.js"></script>
 	<script src="components/user-center/user-center.directive.js"></script>
 	<script src="components/user-center/user-center.service.js"></script>
 
-	<div class="container">
-
-		<div class="main" ui-view></div>
-		
-	</div>
+	<div class="main" ui-view></div>
 </body>
 </html>

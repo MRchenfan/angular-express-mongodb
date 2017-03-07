@@ -4,6 +4,30 @@ angular.module('app')
 		$urlRouterProvider.otherwise('/')
 
 		$stateProvider
+			.state('users', {
+				url: '/users',
+				views: {
+					'': {
+						templateUrl: 'tpls/users.html'
+					}
+				}
+			})
+			.state('users.login', {
+				url: '/login',
+				views: {
+					'': {
+						template: '<users-login></users-login>'
+					}
+				}
+			})
+			.state('users.signin', {
+				url: '/signin',
+				views: {
+					'': {
+						template: '<users-signin></users-signin>'
+					}
+				}
+			})
 			.state('home', {
 				url: '/',
 				views: {
@@ -24,11 +48,27 @@ angular.module('app')
 					}
 				}
 			})
-			.state('users', {
-				url: '/users',
+			.state('home.dashboard', {
+				url: 'dashboard',
 				views: {
 					'': {
-						templateUrl: 'tpls/users.html'
+						templateUrl: 'tpls/dashboard.html'
+					}
+				}
+			})
+			.state('home.table', {
+				url: 'table',
+				views: {
+					'': {
+						templateUrl: 'tpls/table.html'
+					}
+				}
+			})
+			.state('home.chart', {
+				url: 'chart',
+				views: {
+					'': {
+						templateUrl: 'tpls/chart.html'
 					}
 				}
 			})

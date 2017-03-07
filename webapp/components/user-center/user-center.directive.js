@@ -1,8 +1,8 @@
 angular.module('userCenter')
-	.directive('userCenter', [function() {
+	.directive('usersLogin', [function() {
 
 		return {
-			templateUrl: 'components/user-center/user-center.template.html',
+			templateUrl: 'components/user-center/tpls/login.html',
 			controller: [
 				'$scope',
 				'$location',
@@ -11,6 +11,8 @@ angular.module('userCenter')
 				function($scope, $location, $state, userService) {
 
 					console.log($state)
+
+					$scope.isLogin = true;
 
 					$scope.login = function() {
 
@@ -44,6 +46,12 @@ angular.module('userCenter')
 					}
 				}
 			]
+		}
+	}])
+	.directive('usersSignin', [function() {
+
+		return {
+			templateUrl: 'components/user-center/tpls/signin.html'
 		}
 	}])
 	.directive('userNameUnique', ['$timeout', function($timeout) {
