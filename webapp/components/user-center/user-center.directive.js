@@ -10,10 +10,6 @@ angular.module('userCenter')
 				'userService',
 				function($scope, $location, $state, userService) {
 
-					console.log($state)
-
-					$scope.isLogin = true;
-
 					$scope.login = function() {
 
 						userService.login($scope.user, function(res) {
@@ -29,20 +25,9 @@ angular.module('userCenter')
 						})
 					}
 
-					$scope.register = function() {
+					$scope.signin = function() {
 
-						console.log($scope.user)
-						userService.register($scope.user, function(res) {
-
-							if (res.success) {
-
-								// login
-								$scope.login(res.result)
-							} else {
-
-								// throw error
-							}
-						})
+						$state.go('user.signin')
 					}
 				}
 			]
@@ -51,7 +36,32 @@ angular.module('userCenter')
 	.directive('usersSignin', [function() {
 
 		return {
-			templateUrl: 'components/user-center/tpls/signin.html'
+			templateUrl: 'components/user-center/tpls/signin.html',
+			controller: [
+				'$scope',
+				'$location',
+				'$state',
+				'userService',
+				function($scope, $location, $state, userService) {
+
+					$scope.login = function() {
+
+						$state.go('user.login')
+					}
+
+					$scope.singin = function() {
+
+						userService.singin($scope.user, function(res) {
+
+							if (res.success) {
+
+								alert('signin success')
+								$state.go('user.login')
+							}
+						})
+					}
+				}
+			]
 		}
 	}])
 	.directive('userNameUnique', ['$timeout', function($timeout) {
@@ -84,3 +94,45 @@ angular.module('userCenter')
 			}
 		}
 	}])
+	.directive('widgetUserSummary', [
+		function() {
+
+			return {
+				templateUrl: 'components/user-center/tpls/widget-user-summary.html',
+				controller: [
+					'$scope',
+					'userService',
+					function($scope, userService) {
+
+						$scope.users = [];
+						userService.getUsers()
+							.then(function(res) {
+
+								$scope.users = res.data;
+							});
+					}
+				]
+			}
+		}
+	])
+	.directive('widgetUserManage', [
+		function() {
+
+			return {
+				templateUrl: 'components/user-center/tpls/widget-user-manage.html',
+				controller: [
+					'$scope',
+					'userService',
+					function($scope, userService) {
+
+						$scope.users = [];
+						userService.getUsers()
+							.then(function(res) {
+
+								$scope.users = res.data;
+							});
+					}
+				]
+			}
+		}
+	])

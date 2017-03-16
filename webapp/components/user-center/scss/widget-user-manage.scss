@@ -1,0 +1,14 @@
+.widget-user-manage {
+    overflow: hidden;
+    th, td {
+        font-size: 14px;
+        line-height: 40px !important;
+    }
+    td {
+        img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+        }
+    }
+}

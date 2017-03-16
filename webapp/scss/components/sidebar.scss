@@ -1,25 +1,30 @@
 
 .sidebar {
-	> li {
+	li {
 		list-style: none;
 	}
-	>li>a {
+	li>a {
 		display: inline-block;
 		width: 100%;
 		text-indent: 20px;
 		color: #EEE;
 		font-size: 16px;
 		text-decoration: none;
-
-		span {
-			float: right;
-		}
 	}
 	.sidebar-main {
 		a {
 			height: 60px;
 			line-height: 60px;
 			background: $color-blue - #111;
+		}
+		i {
+			float: right;
+			display: inline-block;
+			width: 70px;
+			height: 60px;
+			line-height: 60px;
+			font-size: 20px;
+			text-indent: 25px;
 		}
 	}
 	.sidebar-title {
@@ -31,7 +36,7 @@
 		}
 	}
 	.sidebar-list {
-		a {
+		>a {
 			height: 40px;
 			line-height: 40px;
 			&:hover {
@@ -39,7 +44,70 @@
 				border-left: 3px solid $color-orange;
 				text-indent: 17px;
 			}
+
+			>i {
+				display: inline-block;
+				float: right;
+				width: 70px;
+				height: 40px;
+				line-height: 40px;
+				font-size: 16px;
+				text-indent: 27px;
+			}
 		}
+	}
+	.sidebar-list.active {
+		>.sidebar-sub-menu {
+			>li {
+				display: block;
+			}
+		}
+		>a {
+			background: $color-blue - #111;
+			border-left: 3px solid $color-orange;
+			text-indent: 17px;
+		}
+	}
+	.sidebar-sub-menu {
+		height: 0;
+		margin-left: 20px;
+		border-left: 2px solid #30426a + #111;
+		>li {
+			display: none;
+			>a {
+				font-size: 0.8em;
+				height: 40px;
+				line-height: 40px;
+				&:hover {
+					background: $color-blue - #111;
+					border-left: 3px solid $color-orange;
+					text-indent: 17px;
+				}
+
+				>i {
+					display: inline-block;
+					float: right;
+					width: 70px;
+					height: 40px;
+					line-height: 40px;
+					text-indent: 27px;
+				}
+			}
+			&.active {
+				>a {
+					background: $color-blue - #111;
+					border-left: 3px solid $color-orange;
+					text-indent: 17px;
+				}
+			}
+		}
+	}
+	.sidebar-sub-menu {
+		-webkit-transition: height 0.25s;
+		-moz-transition: height 0.25s;
+		-ms-transition: height 0.25s;
+		-o-transition: height 0.25s;
+		transition: height 0.25s;
 	}
 	.sidebar-footer {
 		position: absolute;
@@ -55,4 +123,5 @@
 			color: #738bc0 + #222;
 		}
 	}
+
 }

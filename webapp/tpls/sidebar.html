@@ -1,32 +1,85 @@
 <ul class="sidebar">
 	<li class="sidebar-main">
-		<a ng-click="toggle()">
+		<a ng-click="toggleSidebar()">
 			{{ constant.NAME }}
-			<span class="icon-toggle"></span>
+			<i class="fa fa-exchange" aria-hidden="true"></i>
 		</a>
 	</li>
 	<li class="sidebar-title">
 		<a>
-			NAVIGATION
+			Overview
 		</a>
 	</li>
 	<li class="sidebar-list">
 		<a ui-sref="home.dashboard">
 			Dashboard
-			<span class="icon-meter"></span>
+			<i class="fa fa-tachometer" aria-hidden="true"></i>
 		</a>
 	</li>
 	<li class="sidebar-list">
 		<a ui-sref="home.table">
 			Table
-			<span class="icon-table"></span>
+			<i class="fa fa-table" aria-hidden="true"></i>
 		</a>
 	</li>
 	<li class="sidebar-list">
 		<a ui-sref="home.chart">
 			Chart
-			<span class="icon-chart"></span>
+			<i class="fa fa-line-chart" aria-hidden="true"></i>
 		</a>
+	</li>
+	<li class="sidebar-title">
+		<a>
+			Manage
+		</a>
+	</li>
+	<li class="sidebar-list" toggle-directive toggle-attr="false"
+			toggle-class-attr="open active">
+		<a ui-sref="home.resource">
+			Website {{ toggle.website }}
+			<i class="fa fa-internet-explorer" aria-hidden="true"></i>
+		</a>
+		<ul class="sidebar-sub-menu">
+			<li class="sidebar-list">
+				<a>
+					Index
+					<i class="fa fa-home" aria-hidden="true"></i>
+				</a>
+			</li>
+			<li class="sidebar-list">
+				<a>
+					Works
+					<i class="fa fa-gear" aria-hidden="true"></i>
+				</a>
+			</li>
+			<li class="sidebar-list" toggle-directive toggle-attr="false"
+					toggle-class-attr="open active">
+				<a>
+					Articles
+					<i class="fa fa-file-text" aria-hidden="true"></i>
+				</a>
+				<ul class="sidebar-sub-menu">
+					<li class="sidebar-list">
+						<a>
+							JavaScript
+							<i class="fa fa-jsfiddle" aria-hidden="true"></i>
+						</a>
+					</li>
+					<li class="sidebar-list">
+						<a>
+							CSS
+							<i class="fa fa-css3" aria-hidden="true"></i>
+						</a>
+					</li>
+					<li class="sidebar-list">
+						<a>
+							HTML
+							<i class="fa fa-html5" aria-hidden="true"></i>
+						</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
 	</li>
 	<li class="sidebar-footer">
 		<a href="">link-1</a>

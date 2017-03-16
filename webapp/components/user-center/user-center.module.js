@@ -1,1 +1,1 @@
-angular.module('userCenter', [])
+angular.module('userCenter', []);

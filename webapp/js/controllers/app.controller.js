@@ -15,12 +15,13 @@ angular.module('app')
 
 			$scope.user = user;
 
-			$scope.sidebarToggle = true;
-			$scope.toggle = function() {
-				$scope.sidebarToggle = ! $scope.sidebarToggle;
-			}
+			$scope.toggle = {
+				sidebar: true
+			};
+			$scope.toggleSidebar = function() {
 
-			console.log($state);
+				$scope.toggle.sidebar = ! $scope.toggle.sidebar;
+			};
 
 			$scope.state = $state;
 		}

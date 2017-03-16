@@ -89,7 +89,7 @@ gulp.task('watch', () => {
 
 	gulp.watch(srcdir.views + '/**/*.ejs', ['ejs'])
 	// gulp.watch(srcdir.views + '/**/*.jade', ['jade'])
-	gulp.watch(srcdir.scss + '/**/*.scss', ['sass'])
+	gulp.watch('webapp/**/*.scss', ['sass'])
 
 	gulp.watch('webapp/**/*.html', bs.reload);
   gulp.watch('webapp/**/*.css', bs.reload);

@@ -2,9 +2,12 @@ angular.module('userCenter')
 	.service('userService', [
 		'$http',
 		'$state',
-		function($http, $state) {
+		'$q',
+		function($http, $state, $q) {
 
-			var currentUser = null;
+			var currentUser = {
+				name: 'damon.cf'
+			};
 			this.login = function(user, cb) {
 
 				console.log('login => ' + user.name)
@@ -19,7 +22,7 @@ angular.module('userCenter')
 				currentUser = user;
 			}
 
-			this.register = function(user, cb) {
+			this.signin = function(user, cb) {
 
 				console.log('register => ' + user.name)
 
@@ -41,6 +44,11 @@ angular.module('userCenter')
 					}
 				}
 				return currentUser;
+			}
+
+			this.getUsers = function() {
+
+				return $http.get('data/users.json');
 			}
 		}
 	])

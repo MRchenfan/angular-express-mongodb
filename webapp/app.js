@@ -1,4 +1,12 @@
 angular.module('app', [
-	'ui.router', 
-	'userCenter'
-	])
+	// lib.module
+	'ui.router',
+	'ngFileUpload',
+
+	// your.module
+	'userCenter',
+	"todoList",
+	'widgetBanner',
+	'widgetPv',
+	'widgetUv'
+	]);

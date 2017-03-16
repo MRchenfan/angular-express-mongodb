@@ -1,70 +1,66 @@
-<div class="header">
-	<div class="navbar">
-		<div class="nav navbar-left">
-			<p class="header-title">{{ constant.NAME }}</p>
-			<p class="header-breadcrumb">{{ state.current.name | breadCrumb }}</p>
-		</div>
-		<ul class="navbar-right nav navbar-nav">
-			<li class="noticefication">
-				<div class="dropdown">
-					<a data-toggle="dropdown">
-						Notes
-						<span class="caret"></span>
-					</a>
-					<ul class="dropdown-menu">
-						<li class="disabled">
-							<a>
-								noticefications
-							</a>
-						</li>
-						<li class="divider"></li>
-						<li>
-							<a href="">
-								new message(3)
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<span class="text-warning">
-									warning !
-								</span>
-							</a>
-						</li>
-					</ul>
-				</div>
-			</li>
-			<li class="user">
-				<div class="dropdown">
-					<a data-toggle="dropdown">
-						User
-						<span class="caret"></span>
-					</a>
-					<ul class="dropdown-menu">
-						<li class="disabled user-name">
-							<a href="">
-								{{ user.name }}
-							</a>
-						</li>
-						<li class="divider"></li>
-						<li>
-							<a href="">
-								Profile
-							</a>
-						</li>
-						<li>
-							<a href="">
-								Todos
-							</a>
-						</li>
-						<li class="divider"></li>
-						<li>
-							<a href="">
-								Logout
-							</a>
-						</li>
-					</ul>
-				</div>
-			</li>
-		</ul>
+<div class="header navbar">
+	<div class="navbar-left">
+		<p class="header-title">{{ constant.NAME }}</p>
+		<p class="header-breadcrumb">{{ state.current.name | breadCrumb : true }}</p>
 	</div>
+	<ul class="navbar-right navbar-nav">
+		<li class="noticefication">
+			<div class="dropdown">
+				<a data-toggle="dropdown" class="noticefication-btn dropdown-toggle">
+					<i class="fa fa-bell-o" aria-hidden="true"></i>
+				</a>
+				<ul class="dropdown-menu">
+					<li class="disabled">
+						<a>
+							noticefications
+						</a>
+					</li>
+					<li class="divider"></li>
+					<li>
+						<a href="">
+							new message(3)
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class="text-warning">
+								warning !
+							</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li class="user">
+			<div class="dropdown">
+				<a data-toggle="dropdown" class="user-btn dropdown-toggle">
+					<img src="img/ss00002.jpg" alt="H" class="user-head">
+				</a>
+				<ul class="dropdown-menu">
+					<li class="disabled user-name">
+						<a href="">
+							{{ user.name }}
+						</a>
+					</li>
+					<li class="divider"></li>
+					<li>
+						<a href="">
+							Profile
+						</a>
+					</li>
+					<li>
+						<a href="">
+							Todos
+						</a>
+					</li>
+					<li class="divider"></li>
+					<li>
+						<a href="">
+							Logout
+						</a>
+					</li>
+				</ul>
+			</div>
+		</li>
+	</ul>
 </div>

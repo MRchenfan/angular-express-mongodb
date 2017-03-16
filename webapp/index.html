@@ -7,6 +7,7 @@
 
 	<!-- lib stylesheet -->	
 	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
 
 	<!-- your stylesheet -->
 	<link rel='stylesheet' href='css/style.css' />
@@ -15,8 +16,11 @@
 	<!-- lib javaScript -->
 	<script src="lib/jquery/dist/jquery.js"></script>
 	<script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+
+	<!-- lib.angular -->
 	<script src="lib/angular/angular.js"></script>
 	<script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="lib/ng-file-upload/ng-file-upload.js"></script>
 
 	<!-- angular app.module -->
 	<script src="app.js"></script>
@@ -29,14 +33,35 @@
 	<!-- angular app.directives -->
 	<script src="js/directives/db-sidebar.directive.js"></script>
 	<script src="js/directives/db-header.directive.js"></script>
+	<script src="js/directives/toggle.directive.js"></script>
 
 	<!-- angular app.filters -->
 	<script src="js/filters/bread-crumb.filter.js"></script>
 
-	<!-- angular components -->
+	<!-- angular components.userCenter -->
 	<script src="components/user-center/user-center.module.js"></script>
 	<script src="components/user-center/user-center.directive.js"></script>
 	<script src="components/user-center/user-center.service.js"></script>
+
+	<!--angular components.todoList-->
+	<script src="components/todo-list/todo-list.module.js"></script>
+	<script src="components/todo-list/todo-list.directive.js"></script>
+	<script src="components/todo-list/todo-list.service.js"></script>
+
+	<!-- angular components.widgetBanner -->
+	<script src="components/widget-banner/widget-banner.module.js"></script>
+	<script src="components/widget-banner/widget-banner.directive.js"></script>
+	<script src="components/widget-banner/widget-banner.service.js"></script>
+
+	<!--angular components.widgetPv-->
+	<script src="components/widget-pv/widget-pv.module.js"></script>
+	<script src="components/widget-pv/widget-pv.directive.js"></script>
+	<script src="components/widget-pv/widget-pv.service.js"></script>
+
+	<!--angular components.widgetUv-->
+	<script src="components/widget-uv/widget-uv.module.js"></script>
+	<script src="components/widget-uv/widget-uv.directive.js"></script>
+	<script src="components/widget-uv/widget-uv.service.js"></script>
 
 	<div class="main" ui-view></div>
 </body>

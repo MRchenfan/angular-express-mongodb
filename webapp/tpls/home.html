@@ -1,11 +1,14 @@
-<div class="content-wrapper" ng-class="{ 'open': sidebarToggle }">
+<div class="content-wrapper" ng-class="{ 'open': toggle.sidebar }">
 	<db-header></db-header>
 	<div class="content">
-		<div class="col-xs-12">
-			<div ui-view></div>
+		<div ui-view></div>
+		<div class="footer">
+			<a href="#">
+				copyright@xingyun.tec
+			</a>
 		</div>
 	</div>
 </div>
-<div class="sidebar-wrapper" ng-class="{ 'open': sidebarToggle }">
+<div class="sidebar-wrapper" ng-class="{ 'open': toggle.sidebar }">
 	<db-sidebar></db-sidebar>
 </div>

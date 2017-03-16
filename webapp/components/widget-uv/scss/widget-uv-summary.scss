@@ -1,0 +1,19 @@
+.widget-uv-summary {
+    height: 80px;
+    $theme: #5AA6E2;
+    border: 1px solid $theme + #111;
+    border-left: 5px solid $theme;
+    background: #FFF;
+    padding: 10px;
+    margin-bottom: 10px;
+    .media-img {
+        color: $theme;
+        font-size: 40px;
+    }
+    .media-heading {
+        margin-top: 10px;
+    }
+    .media-text {
+        color: #666;
+    }
+}

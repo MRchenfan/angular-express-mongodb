@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+let proxy = require('express-http-proxy')
 
 var app = express();
 var sessionOptions = {
@@ -31,6 +32,29 @@ app.use(session(sessionOptions));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+/* cross.origin */
+app.use('*', function (req, res, next) {
+
+  res.header("Access-Control-Allow-Origin", '*');
+  res.header("Access-Control-Allow-Credentials", true);
+  res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
+  res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
+  res.header("X-Powered-By",' 3.2.1');
+  if(req.method == "OPTIONS") res.sendStatus(200);/*让options请求快速返回*/
+  else  next();
+});
+
+/**
+ * proxy
+ */
+
+/*app.use('/', proxy('', {
+  forwardPath: (req, res) => {
+
+    return require('url').parse(req.url).path
+  }
+}))*/
+
 // routers 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -38,6 +62,7 @@ let articles = require('./routes/articles')
 let message = require('./routes/message')
 let works = require('./routes/works')
 let login = require('./routes/login')
+let banner = require('./routes/banner')
 
 app.use('/', index);
 app.use('/users', users);
@@ -45,6 +70,7 @@ app.use('/articles', articles)
 app.use('/message', message)
 app.use('/works', works)
 app.use('/login', login)
+app.use('/banner', banner)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -5,7 +5,7 @@ angular.module('app')
 
 			var output = input.replace('.', '/');
 			if (uppercase) {
-				output = output.toUppercase();
+				output = output.toUpperCase();
 			}
 			return output;
 		}

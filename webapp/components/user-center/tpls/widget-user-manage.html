@@ -1,0 +1,47 @@
+<div class="widget-user-manage panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      User Manage
+    </h3>
+  </div>
+  <table class="table table-hover table-condensed table-striped">
+    <tr>
+      <th>Avatar</th>
+      <th>Username</th>
+      <th>Role</th>
+      <th>Email</th>
+      <th>Mobile</th>
+      <th>QQ</th>
+      <th>Wechat</th>
+    </tr>
+    <tr ng-repeat="user in users">
+      <td>
+        <img ng-src="{{ user.head }}" alt="Avatar">
+      </td>
+      <td>
+        {{ user.name }}
+      </td>
+      <td>
+        {{ user.role }}
+      </td>
+      <td>
+        {{ user.email }}
+      </td>
+      <td>
+        {{ user.role }}
+      </td>
+      <td>
+        {{ user.email }}
+      </td>
+      <td>
+        {{ user.mobile }}
+      </td>
+      <td>
+        {{ user.qq }}
+      </td>
+      <td>
+        {{ user.wechat }}
+      </td>
+    </tr>
+  </table>
+</div>

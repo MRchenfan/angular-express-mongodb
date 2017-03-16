@@ -1,0 +1,16 @@
+[{
+  "name": "Damon",
+  "role": "admin",
+  "email": "damon@localhost.com",
+  "head": "img/0485.png"
+}, {
+  "name": "Mrchen",
+  "role": "admin",
+  "email": "mrchen@localhost.com",
+  "head": "img/0486.png"
+}, {
+  "name": "Test",
+  "role": "vistor",
+  "email": "test@localhost.com",
+  "head": "img/0487.png"
+}]

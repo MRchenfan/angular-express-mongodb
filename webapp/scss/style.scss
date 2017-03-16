@@ -12,9 +12,8 @@ html, body, .main {
 }
 
 .content-wrapper {
-	padding-left: 70px;
 	&.open {
-		padding-left: 250px;
+		left: 250px;
 	}
 
 	-webkit-transition: all .25s ease;
@@ -45,22 +44,51 @@ html, body, .main {
 	&.open {
 		margin-left: 0;
 	}
+	
+	&:not(.open) .sidebar-list {
+		a:hover {
+			i {
+				border-left: 3px solid $color-orange;
+				text-indent: 24px;
+			}
+		}
+	}
 	@import "components/sidebar";
 }
 
 .content-wrapper {
 	position: absolute;
-	left: 0;
+	left: 70px;
 	right: 0;
 	top: 0;
 	bottom: 0;
 	overflow: hidden;
-	background: #FFF - #111;
+	background: #f1f4f9;
+
+	.content {
+		position: absolute;
+		top: 80px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
 
 	@import "components/header";
 	@import "components/dashboard";
 	@import "components/table";
 	@import "components/chart";
+	@import "components/footer";
 }
-// components
+// components.userCenter
 @import "../components/user-center/scss/user-center";
+@import "../components/user-center/scss/widget-user-summary";
+@import "../components/user-center/scss/widget-user-manage";
+
+// components.todoList
+@import "../components/todo-list/scss/todo-list-manage";
+
+@import "../components/widget-banner/scss/widget-banner";
+@import "../components/widget-pv/scss/widget-pv-summary";
+@import "../components/widget-uv/scss/widget-uv-summary";

@@ -1,0 +1,18 @@
+.widget-pv-summary {
+    height: 80px;
+    border: 1px solid #62E2A9 + #111;
+    border-left: 5px solid #62E2A9;
+    background: #FFF;
+    padding: 10px;
+    margin-bottom: 10px;
+    .media-img {
+        color: #62E2A9;
+        font-size: 40px;
+    }
+    .media-heading {
+        margin-top: 10px;
+    }
+    .media-text {
+        color: #666;
+    }
+}

@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width" />
 	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
 	<link rel='stylesheet' href='css/style.min.css' />
+	<link rel="stylesheet" href="css/works.min.css">
 </head>
 <body>
 
@@ -14,23 +15,71 @@
 
 		<!-- content begin -->
 		<div class="content">
-			<br>
-			<br>
-			<hr>
-			<h3>this is works page</h3>
-			<hr>
-			<br>
-			<br>
-		</div>
+			
+			<!-- latest -->
+			<div class="section section-latest">
+				<div class="section-heading">
+					<a href="#" class="pull-right section-more">
+						更多
+						<span class="icon-more"></span>
+					</a>
+					<h3 class="section-title">
+						最近
+					</h3>
+				</div>
+				<div class="section-body">
+					<div class="row">
+						<%- include('components/media', { medias: latest }) %>
+					</div>
+				</div>
+			</div>
 
-		<!-- footer begin -->
-		<%- include('common/footer') %>
+			<!-- background -->
+			<div class="section section-background">
+				<div class="section-heading">
+					<a href="#" class="pull-right section-more">
+						更多
+						<span class="icon-more"></span>
+					</a>
+					<h3 class="section-title">
+						高清背景图
+					</h3>
+				</div>
+				<div class="section-body">
+					<div class="row">
+						<%- include('components/media', { medias: background }) %>
+					</div>
+				</div>
+			</div>
+
+			<!-- icon -->
+			<div class="section section-icon">
+				<div class="section-heading">
+					<a href="#" class="pull-right section-more">
+						更多
+						<span class="icon-more"></span>
+					</a>
+					<h3 class="section-title">
+						图标
+					</h3>
+				</div>
+				<div class="section-body">
+					<div class="row">
+						<%- include('components/media', { medias: icon }) %>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
-	<!-- sidebar begin -->
-	<%- include('common/sidebar') %>
+	<!-- footer begin -->
+	<%- include('common/footer') %>
+</div>
 
-	<script src="lib/jquery/dist/jquery.min.js"></script>
-	<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- sidebar begin -->
+<%- include('common/sidebar') %>
+
+<script src="lib/jquery/dist/jquery.min.js"></script>
+<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
