@@ -1,0 +1,83 @@
+<!--展示评论-->
+<div class="comment">
+    <div class="comment-tools">
+        <strong class="comment-count">
+            <%= comments.length %>条评论
+        </strong>
+        <a href="#" class="sort-btn pull-right sort-desc">
+            按时间倒序
+        </a>
+        <a href="#" class="sort-btn pull-right sort-asc">
+            按时间正序
+        </a>
+        <a href="#" class="active sort-btn pull-right sort-praise">
+            按喜欢排序
+        </a>
+    </div>
+    <ul class="comment-list container-fluid">
+        <% for (var i = 0; i < comments.length; i++) { %>
+        <li class="comment-list-item">
+            <div class="comment-header">
+                <div class="avator pull-left">
+                    <img src="/img/ss00003.jpg" alt="Avator" class="avator">
+                </div>
+                <div class="header-text">
+                    <p class="author"><%= comments[i].author %></p>
+                    <p class="metadata">
+                        <span class="floor"><%= i + 1 %>楼</span>
+                        <span>-</span>
+                        <span class="time"><%= comments[i].updateTime %></span>
+                    </p>
+                </div>
+            </div>
+            <div class="comment-content">
+                <p><%= comments[i].content %></p>
+            </div>
+            <div class="comment-tool clearfix">
+                <a href="#" class="tool-btn praise-btn">
+                    赞
+                </a>
+                <a href="#" class="tool-btn reply-btn">
+                    回复
+                </a>
+                <a href="#" class="tool-btn report-btn pull-right">
+                    举报
+                </a>
+                <% if (user.name == comments[i].author) { %>
+                <a href="#" class="tool-btn remove-btn pull-right">
+                    删除
+                </a>
+                <% } %>
+            </div>
+            <ul class="subcomment">
+                <% for (var j = 0; j < comments[i].subcomments.length; j++) { %>
+                <li class="subcomment-item">
+                    <p class="subcomment-content">
+                        <a href="#" class="author"><%= comments[i].subcomments[j].author %>:</a>
+                        <span class="content"><%= comments[i].subcomments[j].content %></span>
+                    </p>
+                    <p class="subcomment-tool">
+                        <span class="metadata"><%= comments[i].subcomments[j].updateTime %></span>
+                        <a href="#" class="tool-btn reply-btn">回复</a>
+                        <a href="#" class="tool-btn report-btn pull-right">举报</a>
+
+                        <% if (user.name == comments[i].subcomments[j].author) { %>
+                        <a href="#" class="tool-btn remove-btn pull-right">
+                            删除
+                        </a>
+                        <% } %>
+
+                    </p>
+                    <p class="subcomment-item-divider"></p>
+                </li>
+                <% } %>
+                <li class="comment-tool subcomment-item">
+                    <a href="#" class="add-btn">
+                        添加新评论
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <% } %>
+    </ul>
+</div>

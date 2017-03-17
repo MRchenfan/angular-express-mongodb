@@ -19,5 +19,6 @@ db.on('error', (err) => {
 // register models
 require('./models/user-model')
 require('./models/book-model')
+require('./models/comment-model')
 
 module.exports = db
