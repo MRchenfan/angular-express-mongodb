@@ -94,7 +94,7 @@ router.post('/callback', (req, res, next) => {
 
 				tmpArr.push(k + '=' + req.body[k]);
 			}
-			return tmpArr.join('\n');
+			return tmpArr.join('');
 		}());
 
 		// rsa verify
