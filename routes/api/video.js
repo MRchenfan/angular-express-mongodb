@@ -92,7 +92,7 @@ router.post('/callback', (req, res, next) => {
 			let tmpArr = [];
 			for (var k in req.body) {
 
-				tmpArr.push('k=' + req.body[k]);
+				tmpArr.push(k + '=' + req.body[k]);
 			}
 			return tmpArr.join('\n');
 		}());

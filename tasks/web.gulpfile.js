@@ -132,11 +132,11 @@ gulp.task('css', () => {
 gulp.task('js', () => {
 
 	return gulp.src(srcdir.js + '**/*.js')
-		.pipe(uglifyJs())
+		/*.pipe(uglifyJs())
 		.pipe(rename((filePath) => {
 
 			filePath.extname = '.min.js'
-		}))
+		}))*/
 		.pipe(gulp.dest(distdir.dist))
 })
 
@@ -157,7 +157,7 @@ gulp.task('views', () => {
 	return gulp.src(srcdir.views + '/**/*.*')
 		.pipe(replace('.html', ''))
 		.pipe(replace('.css', '.min.css'))
-		.pipe(replace('.js', '.min.js'))
+		// .pipe(replace('.js', '.min.js'))
 		.pipe(gulp.dest(distdir.views))
 })
 

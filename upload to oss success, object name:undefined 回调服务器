@@ -1,0 +1,6 @@
+upload to oss success, object name:undefined 回调服务器返回的内容是:{"success":true,"message":"保存文件成功","validate":false,"public_key":"-----BEGIN PUBLIC KEY-----\nMFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKs/JBGzwUB2aVht4crBx3oIPBLNsjGs\nC0fTXv+nvlmklvkcolvpvXLTjaxUHR3W9LXxQ2EHXAJfCB+6H2YF1k8CAwEAAQ==\n-----END PUBLIC KEY-----",
+"pathname":"/callback",
+"query_string":"",
+"authorization":"X05Y8KYrL54szYyH8TobG7+XFA6N703KABssQMR2zfF1O61Lngw5f0wHnRmkSxpEMolQlhZjF5t4xRxDVX9Zxg==",
+"body":"k=filename\nk=size\nk=image/*\nk=400\nk=300\nk=application/x-www-form-urlencoded",
+"public_key_url":"https://gosspublic.alicdn.com/callback_pub_key_v1.pem"}
