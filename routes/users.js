@@ -7,7 +7,7 @@ let UserModel = db.model('UserModel')
 
 /* GET users login or register. */
 router.get('/', function(req, res, next) {
-	res.send('respond with a resource')
+	res.render('user', { title: 'user', user: { name: 'damon' } })
 })
 
 router.post('/register', (req, res, next) => {

@@ -72,6 +72,11 @@ app.use('/works', works)
 app.use('/login', login)
 app.use('/banner', banner)
 
+// api
+let video = require('./routes/api/video');
+
+app.use('/video', video);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

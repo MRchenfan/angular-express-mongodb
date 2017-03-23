@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width" />
 	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
 	<link rel='stylesheet' href='css/style.min.css' />
+	<link rel="stylesheet" href="css/message.min.css">
 </head>
 <body>
 
@@ -13,14 +14,18 @@
 		<%- include('common/header', { user: user, state: 'message' }) %>
 
 		<!-- content begin -->
-		<div class="content">
-			<br>
-			<br>
-			<hr>
-			<h3>this is message page</h3>
-			<hr>
-			<br>
-			<br>
+		<div class="content container-fluid">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="section">
+						<h4 class="text-info">大爷，给点鼓励吧:</h4 >
+						<%- include('components/comment-add', { user: user }) %>
+					</div>
+					<div class="section">
+						<%- include('components/comment', { comments: comments }) %>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<!-- footer begin -->

@@ -1,0 +1,57 @@
+
+<div class="paging">
+	<% if (paging.current == 1) { %>
+	<a href="?page=1" class="paging-item paging-start paging-item-current">1</a>
+	<% } else { %>
+	<a href="?page=1" class="paging-item paging-start">1</a>
+	<% } %>
+
+	<% if (paging.current > 3) { %>
+	<span class="paging-ellipsis-left">...</span>
+	<% } %>
+
+	<% if (paging.current == paging.count) { %>
+	<a href="?page=<%= paging.current - 2 %>" class="paging-item">
+		<%= paging.current - 2 %>
+	</a>
+	<% } %>
+
+
+	<% if (paging.current > 2) { %>
+	<a href="?page=<%= paging.current - 1 %>" class="paging-item paging-item-left">
+		<%= paging.current - 1 %>
+	</a>
+	<% } %>
+	
+	<% if (paging.current > 1 && paging.current < paging.count) { %>
+	<a href="?page=2" class="paging-item paging-item-current">
+		<%= paging.current %>
+	</a>
+	<% } %>
+
+	<% if (paging.current < (paging.count - 1)) { %>
+	<a href="?page=<%= paging.current + 1 %>" class="paging-item paging-item-right">
+		<%= paging.current + 1 %>
+	</a>
+	<% } %>
+
+	<% if (paging.current == 1) { %>
+	<a href="?page=3" class="paging-item">
+		3
+	</a>
+	<% } %>
+
+	<% if (paging.current < (paging.count - 1)) { %>
+	<span class="paging-ellipsis-right">...</span>
+	<% } %>
+
+	<% if (paging.current == paging.count) { %>
+	<a href="?page=<%= paging.count %>" class="paging-item paging-end paging-item-current">
+		<%= paging.count %>
+	</a>
+	<% } else { %>
+	<a href="?page=<%= paging.count %>" class="paging-item paging-end">
+		<%= paging.count %>
+	</a>
+	<% } %>
+</div>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= title %></title>
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="lib/swiper/dist/css/swiper.css">
+
+	<link rel='stylesheet' href='css/style.css' />
+	<link rel="stylesheet" href="css/user.css">
+</head>
+<body>
+	<div class="main">
+		<!-- header begin -->
+		<%- include('common/header', { user: user, state: 'home' }) %>
+
+		<!-- content begin -->
+		<div class="content container">
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="list-group">
+						<a href="#" class="list-group-item">
+							基本设置
+						</a>
+					</div>
+				</div>
+				<div class="col-sm-8">
+					<div class="form-group avatar-set">
+						<div class="col-sm-6">
+							<img src="img/imdamon.jpg" class="img-circle" width="140" height="140">
+						</div>
+						<div class="col-sm-6">
+							<button class="btn btn-primary change-avatar-btn" id="change-avatar-btn">
+								更换头像
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- upload modal -->
+			<div class="modal fade upload-modal" tabindex="-1" role="dialog">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<buttoon class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</buttoon>
+							<h4 class="modal-title">您选择的文件：</h4>
+						</div>
+						<div class="modal-body">
+							<div id="ossfile"></div>
+						</div>
+						<div class="modal-footer">
+							<button class="btn btn-default" data-dismiss="modal">
+								关闭
+							</button>
+							<button id="start-upload-btn" class="btn btn-primary">开始上传</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- footer begin -->
+		<%- include('common/footer') %>
+	</div>
+
+	<!-- sidebar begin -->
+	<%- include('common/sidebar') %>
+
+	<script src="lib/jquery/dist/jquery.js"></script>
+	<script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="lib/plupload-2.1.2/js/plupload.full.min.js"></script>
+	<script src="js/user.js"></script>
+</body>
+</html>
