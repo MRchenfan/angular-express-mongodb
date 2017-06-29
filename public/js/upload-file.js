@@ -35,7 +35,9 @@ $(function() {
 		init: {
 			PostInit: function() {
 				document.getElementById('ossfile').innerHTML = '';
-				$('#start-upload-btn').addClass('disabled');
+				$('#start-upload-btn')
+					.attr('disabled', 'disabled')
+					.addClass('disabled');
 			},
 
 			// 当获取到了oss参数，那么按钮激活，然后才会添加文件
@@ -107,7 +109,9 @@ $(function() {
 			if (!res) return false;
 			ossParams = res;
 			// enable the btn
-			$('#start-upload-btn').removeClass('disabled');
+			$('#start-upload-btn')
+				.removeAttr('disabled')
+				.removeClass('disabled');
 		});
 	}
 
